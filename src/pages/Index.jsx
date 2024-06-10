@@ -1,17 +1,33 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Container, VStack, Text, Heading, Flex, Spacer, HStack, IconButton } from "@chakra-ui/react";
+import { FaPlay, FaPause, FaForward, FaBackward } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
+    <Container maxW="container.xl" p={0}>
+      <VStack spacing={0} align="stretch">
+        {/* Header */}
+        <Box bg="blue.700" color="white" p={4}>
+          <Heading as="h1" size="lg">Music Streaming Service</Heading>
+        </Box>
+
+        {/* Main Content */}
+        <Box flex="1" p={4}>
+          <Heading as="h2" size="md" mb={4}>Now Playing</Heading>
+          <Box bg="gray.100" p={4} borderRadius="md" boxShadow="md">
+            <Text fontSize="xl" mb={2}>Track Title - Artist Name</Text>
+            <Flex align="center">
+              <IconButton aria-label="Previous" icon={<FaBackward />} mr={2} />
+              <IconButton aria-label="Play" icon={<FaPlay />} mr={2} />
+              <IconButton aria-label="Pause" icon={<FaPause />} mr={2} />
+              <IconButton aria-label="Next" icon={<FaForward />} />
+            </Flex>
+          </Box>
+        </Box>
+
+        {/* Footer */}
+        <Box bg="blue.700" color="white" p={4} mt={4}>
+          <Text textAlign="center">© 2023 Music Streaming Service. All rights reserved.</Text>
+        </Box>
       </VStack>
     </Container>
   );
